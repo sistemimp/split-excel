@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Split Excel</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Split XLSX</h1>
+      <p class="subtitle">
+        Seleziona un file Excel e definisci quanti record per file vuoi ottenere.
+        La prima riga viene trattata come intestazione e mantenuta in ogni output.
+      </p>
+
+      <section class="card">
+        <label class="field-label">File XLSX di input</label>
+        <div class="row">
+          <input id="inputPath" type="text" placeholder="Nessun file selezionato" readonly />
+          <button id="pickInputBtn" type="button">Sfoglia</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <label class="field-label" for="sheetSelect">Foglio da splittare</label>
+        <select id="sheetSelect" disabled>
+          <option value="">Seleziona prima un file XLSX</option>
+        </select>
+        <p id="sheetInfo" class="hint">Nessun file analizzato.</p>
+      </section>
+
+      <section class="card">
+        <label class="field-label">Cartella di output</label>
+        <div class="row">
+          <input id="outputDir" type="text" placeholder="Nessuna cartella selezionata" readonly />
+          <button id="pickOutputBtn" type="button">Scegli</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <label class="field-label" for="recordsPerFile">Record per file (senza contare l'intestazione)</label>
+        <input id="recordsPerFile" type="number" min="1" step="1" value="1000" />
+      </section>
+
+      <div class="actions">
+        <button id="splitBtn" class="primary" type="button">Avvia split</button>
+      </div>
+
+      <section class="card result">
+        <label class="field-label">Risultato</label>
+        <pre id="resultBox">In attesa...</pre>
+      </section>
+    </main>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>

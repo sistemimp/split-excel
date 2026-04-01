@@ -1,0 +1,19 @@
+{
+  "name": "split-excel",
+  "version": "1.0.0",
+  "description": "Electron app per dividere file XLSX in piu file con un numero fisso di record",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "electron": "^41.1.0"
+  }
+}
